@@ -22,8 +22,8 @@ const Loading = ({ name }) => (
 )
 
 const Nav = () => (
-  <nav>
-    <ul>
+  <nav >
+    <ul style={{listStyleType: 'none'}}>
       <li>
         <Link to="/">Home</Link>
       </li>
@@ -32,9 +32,6 @@ const Nav = () => (
       </li>
       <li>
         <Link to="/users/">View 2</Link>
-      </li>
-      <li>
-        <a href="https://github.com/vegardok/react-dynamic-router-load">Github repo</a>
       </li>
     </ul>
   </nav>
@@ -48,12 +45,14 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <>
           <Nav />
-          <Route path="/" exact component={Index} />
-          <Route path="/about/" component={About} />
-          <Route path="/users/" component={Users} />
-        </div>
+          <main>
+            <Route path="/" exact component={Index} />
+            <Route path="/about/" component={About} />
+            <Route path="/users/" component={Users} />
+          </main>
+        </>
       </Router>
     );
   }
