@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{221:function(e,a,n){"use strict";n.r(a);var t=n(0),l=n.n(t),s=n(29),c=n.n(s),d=n(218);a.default=function(){return l.a.createElement("div",{className:"App"},l.a.createElement("div",{className:"App-header"},l.a.createElement("h2",null,"About"),l.a.createElement("span",null,"This view includes d3 v ",d.a," and lodash v ",c.a.VERSION)))}}}]);
+//# sourceMappingURL=about.28ce1231.chunk.js.map
