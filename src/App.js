@@ -33,6 +33,9 @@ const Nav = () => (
       <li>
         <Link to="/users/">View 2</Link>
       </li>
+      <li>
+        <a href="https://github.com/vegardok/react-dynamic-router-load">Github repo</a>
+      </li>
     </ul>
   </nav>
 )
@@ -44,7 +47,7 @@ const About = load(lazy(() => import(/* webpackChunkName: "about" */'./About')))
 class App extends Component {
   render() {
     return (
-      <Router>
+      <Router basename="/react-dynamic-router-load">
         <div>
           <Nav />
           <Route path="/" exact component={Index} />
