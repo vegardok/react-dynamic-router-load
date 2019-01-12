@@ -4,10 +4,14 @@ import hljs from 'highlight.js';
 
 const Users = () => {
   return (
-    <>
-      <h2>Users </h2>
-      <span>Inc highlight.js and lodash v {_.VERSION}</span>
-    </>
+    <div className="App">
+      <div className="App-header">
+        <h2>Users </h2>
+        <span>
+          This view highlight.js and lodash v {_.VERSION}
+        </span>
+      </div>
+    </div>
   );
 };
 export default Users;

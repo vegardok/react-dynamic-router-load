@@ -1,34 +1,21 @@
 import React, { lazy, Suspense, Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-
-import logo from './logo.svg';
 import './App.css';
 
 const Index = () => (
   <div className="App">
     <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
       <p>
-        Edit <code>src/App.js</code> and save to reload.
+        Dynamic view load demo. This view includes React and react-router
       </p>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
     </header>
   </div>
 );
 
-
 const load = C => () => <Suspense fallback={<span>loading</span>}><C/></Suspense>;
-const Users = load(lazy(() => import('./Users')))
-const About = load(lazy(() => import('./About')))
-
+const Users = load(lazy(() => import(/* webpackChunkName: "users" */ './Users')))
+const About = load(lazy(() => import(/* webpackChunkName: "about" */'./About')))
 
 class App extends Component {
   render() {
@@ -41,10 +28,10 @@ class App extends Component {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/about/">About</Link>
+                <Link to="/about/">View 1</Link>
               </li>
               <li>
-                <Link to="/users/">Users</Link>
+                <Link to="/users/">View 2</Link>
               </li>
             </ul>
           </nav>
