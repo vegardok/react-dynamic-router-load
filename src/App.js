@@ -1,5 +1,5 @@
 import React, { lazy, Suspense, Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Route, Link } from "react-router-dom";
 
 import './App.css';
 
@@ -47,7 +47,7 @@ const About = load(lazy(() => import(/* webpackChunkName: "about" */'./About')))
 class App extends Component {
   render() {
     return (
-      <Router basename="/react-dynamic-router-load">
+      <Router>
         <div>
           <Nav />
           <Route path="/" exact component={Index} />
