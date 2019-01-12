@@ -13,10 +13,10 @@ const Index = () => (
   </div>
 );
 
-const Loading = () => (
+const Loading = ({ name }) => (
   <div className="App">
     <div className="App-header">
-      <span>Loading asynchronous view...</span>
+      <span>Loading view '{name}' asynchronously...</span>
     </div>
   </div>
 )
@@ -40,9 +40,9 @@ const Nav = () => (
   </nav>
 )
 
-const load = C => () => <Suspense fallback={<Loading/>}><C/></Suspense>;
-const Users = load(lazy(() => import(/* webpackChunkName: "users" */ './Users')))
-const About = load(lazy(() => import(/* webpackChunkName: "about" */'./About')))
+const load = (name, C) => () => <Suspense fallback={<Loading name={name}/>}><C/></Suspense>;
+const Users = load('Users', lazy(() => import(/* webpackChunkName: "users" */ './Users')))
+const About = load('About', lazy(() => import(/* webpackChunkName: "about" */'./About')))
 
 class App extends Component {
   render() {
