@@ -1,3 +1,5 @@
+/* eslint no-unused-vars: 0 */
+
 import React from 'react';
 import _ from 'lodash';
 import hljs from 'highlight.js';
